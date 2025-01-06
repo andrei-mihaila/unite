@@ -108,7 +108,7 @@ terminate({ok, Result}, #s{cases = Cases} = State) ->
 print_failures(#{failed := Failures}) ->
     Indexed = lists:zip(lists:seq(1, length(Failures)), Failures),
     [print_failure(I, F) || {I, F} <- Indexed],
-    format("~n");
+    format("~n", []);
 print_failures(_Cases) ->
     ok.
 
